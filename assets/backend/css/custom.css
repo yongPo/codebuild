@@ -1,0 +1,6 @@
+.table-hover > tbody > tr:hover small{
+	display: block;
+}
+.table-hover > tbody > tr small{
+	display: none;
+}
