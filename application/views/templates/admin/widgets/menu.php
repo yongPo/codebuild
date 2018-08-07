@@ -15,7 +15,7 @@
             </a>
             <ul class="ml-menu">
                 <li>
-                    <a href="<?= base_url(); ?>cb-admin/edit/page">All Pages</a>
+                    <a href="<?= base_url(); ?>cb-admin/list/page">All Pages</a>
                 </li>
                 <li>
                     <a href="<?= base_url(); ?>cb-admin/create/page">Add New</a>

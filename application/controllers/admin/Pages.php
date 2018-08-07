@@ -21,9 +21,9 @@
 	    $this->template->set_template('admin');
 
   }
-        public function index($page = 'home'){
-	        //$this->template->load_sub('sales_count', $this->transaction_model->get_sales_count());
-			$this->template->load('backend/pages/index');
+        public function index(){
+	        $this->template->load_sub('contents', $this->page_model->get());
+			$this->template->load('admin/pages/index');
         }
 
         public function save(){
@@ -59,17 +59,9 @@
         }
       
 		public function delete($id){
-            // Check log in
-            if(!$this->session->userdata('logged_in')){
-                redirect('users/login');
-            }
+            $this->page_model->delete($id);
 
-            $this->post_model->delete($id);
-
-            //Set Message
-            $this->session->set_flashdata('post_deleted', 'Your post has been deleted');
-
-            redirect('posts');
+           	redirect('cb-admin/list/page/');
         }
 
         public function edit($id){
@@ -79,27 +71,31 @@
 				  $(".note-editable").attr("style","min-height:300px")
 				});
 			';
-
-			
 			$this->template->extra_js($extra_js);
         	$this->template->set_title('Edit Page');
-        	$this->template->load_sub('data', $this->page_model->get_by_id($id));
+
+			$this->form_validation->set_rules('title', 'Title', 'required');
+	        $this->form_validation->set_rules('body', 'Content', 'required');
+
+			if($this->form_validation->run() === FALSE){
+				$this->template->load_sub('data', $this->page_model->get_by_id($id));
            
-            $this->template->load('admin/pages/edit');
+            	$this->template->load('admin/pages/edit');
+			}else{
+			$slug = url_title($this->input->post('title'), "dash", TRUE);
 
-        }
+			$data = array(
+				'title' => $this->input->post('title'),
+				'slug' => $slug,
+				'body' => $this->input->post('body'),
+				'updated_at' => date('Y-m-d H:i:s')
+			);
+			
+        	$this->template->load_sub('data', $this->page_model->get_by_id($id));
+        	$this->template->load_sub('content', $this->page_model->update($id, $data));
+           
+            redirect('cb-admin/edit/page/'.$id);
 
-        public function update(){
-            // Check log in
-            if(!$this->session->userdata('logged_in')){
-                redirect('users/login');
-            }
-
-            $this->post_model->update();
-
-            //Set Message
-            $this->session->set_flashdata('post_updated', 'Your post has been updated');
-
-            redirect('posts');
         }
     }
+}

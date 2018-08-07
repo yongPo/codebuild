@@ -12,14 +12,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 			if($slug === FALSE){
 				$this->db->order_by('cb_posts.id', 'DESC');
-				$this->db->join('cb_terms', 'cb_terms.id = cb_posts.terms_id');
 				$query = $this->db->get_where('cb_posts', 
 											array(
 												'slug' => $slug , 
-												'post_type' => 'post', 
-												'cb_posts.is_deleted' => '0'
+												'post_type' => 'page', 
+												'is_deleted' => '0'
 											));
-				return $query->result_array();
+				return $query->result();
 			}
 			$query = $this->db->get_where('cb_posts', 
 											array(
@@ -46,18 +45,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			return true;
 		}
 
-		public function update($id){
-			$slug = url_title($this->input->post('title'), "dash", TRUE);
-
-			$data = array(
-					'title' => $this->input->post('title'),
-					'slug' => $slug,
-					'body' => $this->input->post('body'),
-					'terms_id' => $this->input->post('category_id'),
-					'updated_at' => date('Y-m-d H:i:s')
-				);
-			$this->db->where('id', $this->input->post('id'));
-			return $this->db->update('cb_posts', $data);
+		public function update($id, $data){
+			
+			$this->db->where('id', $id);
+			$query = $this->db->update('cb_posts', $data);
+			return $query->result();
 		}
 
 		public function get_name(){

@@ -11,7 +11,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
-                    	<p><a href="javascript:void(0);">All(3)</a> | <a href="javascript:void(0);">Published(2)</a> | <a href="javascript:void(0);">Draft(1)</a></p>
+                    	<p><a href="javascript:void(0);">All(3)</a> | <a href="javascript:void(0);">Published(2)</a> | <a href="javascript:void(0);">Draft(1)</a> | <a href="javascript:void(0);" class="col-red">Trash</a></p>
                         <ul class="header-dropdown m-r--5">
                             <li class="dropdown">
                                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -43,17 +43,19 @@
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                        	Hello World <br>
-											<small><a href="javascript:void(0);">Edit</a> | <a href="javascript:void(0);">Quick Edit</a> | <a href="javascript:void(0);" class="col-red">Trash</a> | <a href="javascript:void(0);">View</a></small>
-                                        </td>
-                                        <td>admin</td>
-                                        <td>
-                                        	Published<br>
-                                        	2018/07/09
-                                        </td>
-                                    </tr>
+                                    <?php foreach ($contents as $content): ?>
+                                        <tr>
+                                            <td>
+                                                <?php echo $content->title ?> <br>
+                                                <small><a href="<?php echo base_url() . 'cb-admin/edit/page/' . $content->id; ?>">Edit</a> | <a href="javascript:void(0);">Quick Edit</a> | <a href="<?php echo base_url() . 'cb-admin/delete/page/' . $content->id; ?>" class="col-red">Trash</a> | <a href="javascript:void(0);">View</a></small>
+                                            </td>
+                                            <td>admin</td>
+                                            <td>
+                                                Published<br>
+                                                <?php echo date('Y-m-d', strtotime($content->created_at)); ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>

@@ -12,11 +12,11 @@
                     <div class="header">
                     	<div class="form-group">
                             <div class="form-line">
-                                <input type="text" class="form-control" name="title" value="<?= $data->title; ?>" placeholder="" autofocus>
+                                <input type="text" class="form-control" name="title" value="<?= $data->title; ?>" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
-                        	<?= $data->slug; ?>
+                        	<a href="<?= base_url() . $data->slug; ?>"><?=  base_url() . $data->slug; ?></a>
                         </div>
                     </div>
                     <div class="body">
@@ -38,16 +38,15 @@
                         </div>
                         <div id="publish-panel" class="panel-collapse collapse in" role="tabpanel">
                             <div class="panel-body">
-                                <button type="button" class="btn btn-default waves-effect">Save Draft</button><span class="pull-right"><button type="button" class="btn btn-default waves-effect">Preview</button></span>
                                 <div class="m-t-10 demo-icon-container">
                                     <p class="m-t-10 demo-google-material-icon"><i class="material-icons">vpn_key</i>
                                         <span class="icon-name">
-                                        Status: <strong>Draft</strong> <a href="javascript:void(0);">Edit</a>
+                                        Status: <strong>Published</strong> <a href="javascript:void(0);">Edit</a>
                                     </span></p>
 
                                     <p class="m-t-10 demo-google-material-icon"><i class="material-icons">visibility</i>
                                         <span class="icon-name">
-                                        Visibility: <strong>Draft</strong> <a href="javascript:void(0);">Edit</a>
+                                        Visibility: <strong>Public</strong> <a href="javascript:void(0);">Edit</a>
                                     </span></p>
 
                                     <p class="m-t-10 demo-google-material-icon"><i class="material-icons">date_range</i>

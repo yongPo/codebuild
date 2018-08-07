@@ -27,6 +27,6 @@
 	        $this->template->set_template('admin');
 
 	        //$this->template->load_sub('sales_count', $this->transaction_model->get_sales_count());
-			$this->template->load('backend/dashboard/index');
+			$this->template->load('admin/dashboard/index');
         }
     }

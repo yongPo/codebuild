@@ -2,9 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 /******** Admin************/
 $route['cb-admin'] = 'admin/dashboards';
+
 $route['cb-admin/list/page'] = 'admin/pages';
 $route['cb-admin/create/page'] = 'admin/pages/save';
 $route['cb-admin/edit/page/(:any)'] = 'admin/pages/edit/$1';
+$route['cb-admin/view/page/'] = 'admin/pages/list';
+$route['cb-admin/delete/page/(:any)'] = 'admin/pages/delete/$1';
 
 /************ POST *************/
 $route['posts/index'] = 'posts/index';
