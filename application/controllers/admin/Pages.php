@@ -92,7 +92,7 @@
 			);
 			
         	$this->template->load_sub('data', $this->page_model->get_by_id($id));
-        	$this->template->load_sub('content', $this->page_model->update($id, $data));
+        	$this->template->load_sub('contents', $this->page_model->update($id, $data));
            
             redirect('cb-admin/edit/page/'.$id);
 

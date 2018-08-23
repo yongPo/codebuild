@@ -20,7 +20,7 @@
                         </div>
                     </div>
                     <div class="body">
-                         <textarea id="summernote" name="body">
+                        <textarea id="summernote" name="body">
                             <?= $data->body; ?>
                         </textarea>
                     </div>

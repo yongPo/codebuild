@@ -23,6 +23,23 @@
             </ul>
         </li>
         <li>
+            <a href="javascript:void(0);" class="menu-toggle">
+                <i class="material-icons">layers</i>
+                <span>Slides</span>
+            </a>
+            <ul class="ml-menu">
+                <li>
+                    <a href="<?= base_url(); ?>cb-admin/list/slides">All Slides</a>
+                </li>
+                <li>
+                    <a href="<?= base_url(); ?>cb-admin/create/slides">Add New</a>
+                </li>
+                <li>
+                    <a href="<?= base_url(); ?>cb-admin/category/slider">Add Category</a>
+                </li>
+            </ul>
+        </li>
+        <li>
             <a href="pages/typography.html">
                 <i class="material-icons">text_fields</i>
                 <span>Typography</span>

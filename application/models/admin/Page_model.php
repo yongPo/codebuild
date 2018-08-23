@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 			$this->db->where('id', $id);
 			$query = $this->db->update('cb_posts', $data);
-			return $query->result();
+			return $query;
 		}
 
 		public function get_name(){

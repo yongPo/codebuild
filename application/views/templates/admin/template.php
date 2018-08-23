@@ -22,6 +22,9 @@
     <!-- Animation Css -->
     <link href="<?= base_url(); ?>assets/plugins/animate-css/animate.css" rel="stylesheet" />
 
+    <!-- Bootstrap Select Css -->
+    <link href="<?= base_url(); ?>assets/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
     <!-- JQuery DataTable Css -->
     <link href="<?= base_url(); ?>assets/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">  

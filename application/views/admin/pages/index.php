@@ -2,7 +2,7 @@
         <div class="block-header">
             <h2>
                 <?= $title; ?>
-                <span class="m-l-10"><a href="<?= base_url(); ?>cb-admin/new/page"><button type="button" class="btn btn-default waves-effect"><i class="material-icons">add</i>Add New</button></a></span>
+                <span class="m-l-10"><a href="<?= base_url(); ?>cb-admin/create/page"><button type="button" class="btn btn-default waves-effect"><i class="material-icons">add</i>Add New</button></a></span>
             </h2>
 
         </div>
