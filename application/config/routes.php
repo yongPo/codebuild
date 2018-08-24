@@ -11,7 +11,9 @@ $route['cb-admin/view/page/'] = 'admin/pages/list';
 $route['cb-admin/delete/page/(:any)'] = 'admin/pages/delete/$1';
 
 /*SLIDER*/
-$route['cb-admin/create/slides'] = 'admin/slider/save';
+$route['cb-admin/list/slider'] = 'admin/slider';
+$route['cb-admin/create/slider'] = 'admin/slider/save';
+$route['cb-admin/edit/slider/(:any)'] = 'admin/slider/edit/$1';
 $route['cb-admin/slides/category'] = 'admin/slider/categoryList';
 
 /*CATEGORY*/

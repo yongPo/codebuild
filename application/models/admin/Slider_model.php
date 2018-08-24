@@ -12,21 +12,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 			if($slug === FALSE){
 				$this->db->order_by('cb_posts.id', 'DESC');
-				$query = $this->db->get_where('cb_posts', 
-											array(
-												'slug' => $slug , 
-												'post_type' => 'page', 
-												'is_deleted' => '0'
-											));
+				$query = $this->db->get_where('cb_posts', array('slug' => $slug , 'post_type' => 'page','is_deleted' => '0'));
 				return $query->result();
 			}
-			$query = $this->db->get_where('cb_posts', 
-											array(
-												'slug' => $slug , 
-												'post_type' => 'post', 
-												'is_deleted' => '0'
-											));
-			return $query->row_array();
+				$query = $this->db->get_where('cb_posts', array('slug' => $slug ,'post_type' => 'post','is_deleted' => '0'));
+				return $query->row_array();
 		}
 
 		public function save($data){

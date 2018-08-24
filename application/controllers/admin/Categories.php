@@ -126,6 +126,7 @@ class Categories extends CI_Controller {
 
         $res = $this->categories_model->saveCategory($data);
         if ($res) {
+        	$response['category'] = $data;
             $response['message'] = 'Category Created Successfully';
             $response['success'] = TRUE;
         }else{

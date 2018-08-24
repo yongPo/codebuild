@@ -29,10 +29,10 @@
             </a>
             <ul class="ml-menu">
                 <li>
-                    <a href="<?= base_url(); ?>cb-admin/list/slides">All Slides</a>
+                    <a href="<?= base_url(); ?>cb-admin/list/slider">All Slides</a>
                 </li>
                 <li>
-                    <a href="<?= base_url(); ?>cb-admin/create/slides">Add New</a>
+                    <a href="<?= base_url(); ?>cb-admin/create/slider">Add New</a>
                 </li>
                 <li>
                     <a href="<?= base_url(); ?>cb-admin/category/slider">Add Category</a>

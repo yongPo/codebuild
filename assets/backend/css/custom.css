@@ -4,3 +4,15 @@
 .table-hover > tbody > tr small{
 	display: none;
 }
+.d-none{
+	display: none !important;
+}
+.d-block{
+	display: block !important;
+}
+.filter-o-50{
+	filter: opacity(50%);
+}
+[type="radio"]:not(:checked) + label + img{
+	filter: opacity(50%);
+}

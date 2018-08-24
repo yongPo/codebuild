@@ -33,7 +33,7 @@ jQuery(document).ready(function($) {
                         dataType: "json",
                         success: function(response)
                         {
-                            console.log(response);
+                            //console.log(response);
                             if (response.success) {
                                 toastr.success(response.message);
                                 categoriesDataTable.ajax.reload();
@@ -79,8 +79,8 @@ jQuery(document).ready(function($) {
                         dataType: "json",
                         success: function(response)
                         {
-                            console.log(response);
                             if (response.success) {
+                            	//console.log(response.category);
                                 toastr.success(response.message);
                                 // Clear all input on the Add user Form
                                 $('#add-category').find('input:text, input:password, select, textarea').val('');
@@ -88,7 +88,7 @@ jQuery(document).ready(function($) {
                                 categoriesDataTable.ajax.reload(); // Reload Users DataTable
                             }else{
                                 if (response.validation_errors) {
-                                    console.log(response.validation_errors);
+                                    //console.log(response.validation_errors);
                                     toastr.error(response.validation_errors);
                                 }else{
                                     toastr.error(response.message);
@@ -105,7 +105,7 @@ jQuery(document).ready(function($) {
 
     function editCategory() {
     	$('#edit-category').on('submit', function(e) {
-    	console.log(this);
+    	//console.log(this);
         e.preventDefault();
         var data = $(this).serialize();
 
@@ -123,7 +123,7 @@ jQuery(document).ready(function($) {
                         dataType: "json",
                         success: function(response)
                         {
-                            console.log(response);
+                            //console.log(response);
                             if (response.success) {
                                 toastr.success(response.message);
                                 // Clear all input on the Add user Form
@@ -132,7 +132,7 @@ jQuery(document).ready(function($) {
                                 categoriesDataTable.ajax.reload(); // Reload Users DataTable
                             }else{
                                 if (response.validation_errors) {
-                                    console.log(response.validation_errors);
+                                    //console.log(response.validation_errors);
                                     toastr.error(response.validation_errors);
                                 }else{
                                     toastr.error(response.message);

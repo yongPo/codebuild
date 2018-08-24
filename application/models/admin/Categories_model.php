@@ -12,12 +12,12 @@ class Categories_model extends CI_Model
         return $this->db->get_where("cb_terms", array('term_type' => 'category-'.$termType, 'is_deleted' => '0'));
     }
 
-    function saveCategory($data)
+    public function saveCategory($data)
     {
         return $this->db->insert('cb_terms', $data);
     }
 
-    function getCategoryInfo($id)
+    public function getCategoryInfo($id)
     {
         $this->db->select('*')
                 ->from('cb_terms')
@@ -29,14 +29,14 @@ class Categories_model extends CI_Model
         return [];
     }
 
-    function updateCategory($id, $data)
+    public function updateCategory($id, $data)
     {
         
         $this->db->where('id',$id);
         return $this->db->update('cb_terms', $data);
     }
 
-    function deleteCategory($id)
+    public function deleteCategory($id)
     {
         $this->db->where('id', $id);
         return $this->db->delete('cb_terms');
